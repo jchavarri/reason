@@ -27,6 +27,6 @@ let getBindings file content =
               use_strict = false
             })))[@explicit_arity ]) in
   let (ast,_) =
-    Parser_flow.program_file ~fail:false ~parse_options content
+    Parser_flow.program_file ~fail:true ~parse_options content
       (Some (Loc.SourceFile (file))) in
   let (_,statements,_) = ast in getOutput statements
