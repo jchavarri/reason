@@ -1,6 +1,17 @@
 open Asttypes
 open Ast_helper
 open Longident
+let stripChars charsToStrip s =
+  let len = String.length s in
+  let res = Bytes.create len in
+  let rec aux i j =
+    if i >= len
+    then Bytes.sub res 0 j
+    else
+      if Bytes.contains charsToStrip (s.[i])
+      then aux (succ i) j
+      else (Bytes.set res j (s.[i]); aux (succ i) (succ j)) in
+  Bytes.to_string (aux 0 0)
 let correctIdentifier ident =
   let rec stripLeadingUnderscores s =
     if (String.length s) = 0
@@ -12,7 +23,8 @@ let correctIdentifier ident =
   if ident = ""
   then ident
   else
-    (let correctedName = stripLeadingUnderscores ident in
+    (let correctedName =
+       (stripLeadingUnderscores ident) |> (stripChars (Bytes.of_string ".-")) in
      let correctedName =
        match String.contains correctedName '_' with
        | true  -> correctedName ^ "_"
@@ -22,6 +34,7 @@ let correctIdentifier ident =
      | "object" -> "object_"
      | "type" -> "type_"
      | "done" -> "done_"
+     | "then" -> "then_"
      | n -> n)
 let astHelperStrLidIdent ?(correct= true)  a =
   match a with
