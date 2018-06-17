@@ -840,3 +840,5 @@ end
 
 module ML = Create_parse_entrypoint (OCaml_syntax)
 module RE = Create_parse_entrypoint (Reason_syntax)
+
+let getBindings = Rebind.getBindings

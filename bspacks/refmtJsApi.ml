@@ -86,11 +86,11 @@ let printREI = printWith RE.print_interface_with_comments
 let printML = printWith ML.print_implementation_with_comments
 let printMLI = printWith ML.print_interface_with_comments
 
-let _ = Js.export "parseRE" parseRE
-let _ = Js.export "parseREI" parseREI
-let _ = Js.export "parseML" parseML
-let _ = Js.export "parseMLI" parseMLI
-let _ = Js.export "printRE" printRE
-let _ = Js.export "printREI" printREI
-let _ = Js.export "printML" printML
-let _ = Js.export "printMLI" printMLI
+let getBindings file code =
+  let bindingsWithNoComments =
+    ((Refmt_api.Reason_toolchain.getBindings file (code |> Js.to_string)),
+      []) in
+  printRE bindingsWithNoComments
+
+
+let _ = Js.export "getBindings" getBindings

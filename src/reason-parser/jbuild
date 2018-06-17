@@ -66,7 +66,21 @@
     reason_parser_message
     reason_oprint
     reason_parser_explain_raw
-    reason_parser_explain))
+    reason_parser_explain
+    rebind
+    sharedTypes
+    parser_flow
+    lexer_flow
+    loc
+    parse_error
+    spider_monkey_ast
+    parser_env
+    handlePlainStatement
+    handleExpression
+    utils
+    handleLiteral
+    irTransformer
+    astUtils))
   (libraries
    (ocaml-migrate-parsetree
     menhirLib
