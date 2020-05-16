@@ -1,0 +1,51 @@
+{
+  "checksum": "56b7a24882de2caddca8e1786eb327e0",
+  "root": "get-bspack@link-dev:./esy.json",
+  "node": {
+    "ocaml@github:ulrikstrid/ocaml#d6dd2a814dfda47c270acc7fc77154cba210afb8@d41d8cd9": {
+      "id":
+        "ocaml@github:ulrikstrid/ocaml#d6dd2a814dfda47c270acc7fc77154cba210afb8@d41d8cd9",
+      "name": "ocaml",
+      "version":
+        "github:ulrikstrid/ocaml#d6dd2a814dfda47c270acc7fc77154cba210afb8",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:ulrikstrid/ocaml#d6dd2a814dfda47c270acc7fc77154cba210afb8"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "get-bspack@link-dev:./esy.json": {
+      "id": "get-bspack@link-dev:./esy.json",
+      "name": "get-bspack",
+      "version": "link-dev:./esy.json",
+      "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
+      "overrides": [],
+      "dependencies": [
+        "bspack@github:bucklescript/bucklescript:bspack.json#676c4b5d605061f7b479388b3ba37ede01722783@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
+    "bspack@github:bucklescript/bucklescript:bspack.json#676c4b5d605061f7b479388b3ba37ede01722783@d41d8cd9": {
+      "id":
+        "bspack@github:bucklescript/bucklescript:bspack.json#676c4b5d605061f7b479388b3ba37ede01722783@d41d8cd9",
+      "name": "bspack",
+      "version":
+        "github:bucklescript/bucklescript:bspack.json#676c4b5d605061f7b479388b3ba37ede01722783",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:bucklescript/bucklescript:bspack.json#676c4b5d605061f7b479388b3ba37ede01722783"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "ocaml@github:ulrikstrid/ocaml#d6dd2a814dfda47c270acc7fc77154cba210afb8@d41d8cd9"
+      ],
+      "devDependencies": []
+    }
+  }
+}
